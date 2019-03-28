@@ -7,7 +7,7 @@ public class ShadowRenderer : MonoBehaviour
     [SerializeField] private GameObject ShadowCaster;
     public LayerMask mask;
     float ShadowFadeScale = 7f;
-    Vector2 SpriteOffset = new Vector2(0f, 1.4f);
+    Vector2 SpriteOffset = new Vector2(0f, 0.56f);
 
 
     SpriteRenderer mySpriteRenderer;
