@@ -20,7 +20,7 @@ public class ShadowRenderer : MonoBehaviour
     void Update()
     {
         Cast();
-        Fade();
+        
     }
 
     private void Cast()
@@ -31,13 +31,14 @@ public class ShadowRenderer : MonoBehaviour
 
         if (hitInfo)
         {
-            Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+           // Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
             transform.localPosition = hitInfo.point + SpriteOffset;
-
+            Fade();
         }
         else
         {
-            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 10, Color.green);
+            // Debug.DrawLine(ray.origin, ray.origin + ray.direction * 10, Color.green);
+            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
         }
     }
 

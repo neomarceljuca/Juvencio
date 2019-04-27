@@ -10,12 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField] int  MaxHP;
     [SerializeField] ParticleSystem MyParticleSys;
 
-
-
     //State
     //bool isAlive = true;
-    int CurrentHP;
+    public int CurrentHP;
     public Text healthText;
+    public bool gameOver = false;
  
     //Cached Component references
     FxControl MyFxControl;
@@ -23,34 +22,26 @@ public class Player : MonoBehaviour
 
     void Start ()
     {
+       
         MyFxControl = MyParticleSys.GetComponent<FxControl>();
         CurrentHP = MaxHP;
+
+       
 	}
 	
 	void Update ()
     {
         HandleHealth();
-        Attack();
+        
 	}
 
 
-    private void Attack()
-    {
-        if(Input.GetButtonDown("BAtk"))
-        {
-            //Send the message to the Animator to activate the trigger parameter named "BAtk"
-           // myAnimator.SetTrigger("Attack");
-            CurrentHP = CurrentHP - 5;
-
-
-
-            FindObjectOfType<AudioManager>().Play("Attack");
-        }
-    }
 
     private void HandleHealth()
     {
         healthText.text = "HP" + CurrentHP;
+
+        if (CurrentHP <= 0) gameOver = true;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -61,10 +52,7 @@ public class Player : MonoBehaviour
 
 
 
-    private void gameOver()
-    {
-
-    }
+  
 
 
 

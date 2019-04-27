@@ -20,7 +20,7 @@ public class FxControl : MonoBehaviour
     // Update is called once per frame
     public void OnCollisionEnter2D(Collision2D col)
     {
-        //transform.position = Source.transform.position;
+        transform.position = Source.transform.position;
         myParticleSys.Emit(50);
     }
 

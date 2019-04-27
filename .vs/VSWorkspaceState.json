@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Assets",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Player",
+    "\\Assets\\Scripts\\StateMachine",
+    "\\Assets\\Scripts\\StateMachine\\Interfaces",
+    "\\Assets\\Scripts\\StateMachine\\test"
+  ],
+  "SelectedNode": "\\Assets\\Scripts\\StateMachine\\test\\SearchFor.cs",
+  "PreviewInSolutionExplorer": false
+}

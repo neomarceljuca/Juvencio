@@ -61,21 +61,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\2DPlatformerController\Assets\2DPlatformer\Scripts\DeadzoneCamera.cs" />
+    <Compile Include="Assets\2DPlatformerController\Assets\2DPlatformer\Scripts\PerfectPixel.cs" />
+    <Compile Include="Assets\2DPlatformerController\PhysicsObject.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\FxControl.cs" />
+    <Compile Include="Assets\Scripts\gameOverMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Player\FSM\FSM.cs" />
-    <Compile Include="Assets\Scripts\Player\FSM\FSMAction.cs" />
-    <Compile Include="Assets\Scripts\Player\FSM\FSMState.cs" />
-    <Compile Include="Assets\Scripts\Player\FSM\StateActionProcessor.cs" />
+    <Compile Include="Assets\Scripts\Player\InputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerPlaftormerController.cs" />
     <Compile Include="Assets\Scripts\ShadowRenderer.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\SpriteShadow.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\Interfaces\IState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\Interfaces\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\States\Idle.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\States\SearchFor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -126,6 +130,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\2DPlatformerController\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
@@ -388,12 +393,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{39620A63-D319-D15D-A631-87C73CF80A32}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
