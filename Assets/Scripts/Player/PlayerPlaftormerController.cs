@@ -6,6 +6,7 @@ public class PlayerPlaftormerController : PhysicsObject
 {
     public float jumpTakeOffSpeed = 7;
     public float maxSpeed = 7;
+    private int extraJumpCharges = 1;
     private SpriteRenderer mySpriteRenderer;
     private Animator myAnimator;
     private Player myPlayer;
@@ -27,11 +28,13 @@ public class PlayerPlaftormerController : PhysicsObject
         move.x = Input.GetAxis("Horizontal");
 
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded )
         {
+    
             velocity.y = jumpTakeOffSpeed;
             groundNormal.y = 1;
             groundNormal.x = 0;
+            FindObjectOfType<AudioManager>().Play("Jump");
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -41,6 +44,19 @@ public class PlayerPlaftormerController : PhysicsObject
             }
         }
 
+
+        //double jump if necessary
+
+        if (Input.GetButtonDown("Jump") && !grounded && extraJumpCharges >0)
+        {
+            extraJumpCharges--;
+            velocity.y = jumpTakeOffSpeed;
+            groundNormal.y = 1;
+            groundNormal.x = 0;
+            FindObjectOfType<AudioManager>().Play("Jump");
+        }
+        if (grounded) extraJumpCharges = 1;
+        //double jump
 
         //Animate
         myAnimator.SetBool("grounded",grounded);
